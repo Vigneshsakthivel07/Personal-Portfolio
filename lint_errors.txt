@@ -1,0 +1,43 @@
+﻿
+> my-app@0.0.0 lint
+> eslint .
+
+
+D:\Portfolio\src\components\Layout\Navbar.jsx
+   4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    no-unused-vars
+  13:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  11 |     // Close mobile menu when route changes
+  12 |     useEffect(() => {
+> 13 |         setIsOpen(false);
+     |         ^^^^^^^^^ Avoid calling setState() directly within an effect
+  14 |     }, [location]);
+  15 |
+  16 |     const navItems = [  react-hooks/set-state-in-effect
+
+D:\Portfolio\src\components\UI\Orb.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\Portfolio\src\pages\About.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\Portfolio\src\pages\Contact.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\Portfolio\src\pages\Home.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\Portfolio\src\pages\Projects.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\Portfolio\src\pages\Skills.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 8 problems (8 errors, 0 warnings)
+
