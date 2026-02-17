@@ -40,11 +40,21 @@ const About = () => {
                                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--neon-green-dim)] to-transparent opacity-10 group-hover:opacity-20 transition-opacity"></div>
 
                                 <div className="relative z-10">
+                                    <div className="mb-8 flex justify-center">
+                                        <div className="relative w-40 h-40 rounded-full overflow-hidden border-2 border-[var(--neon-green)] shadow-[0_0_20px_var(--neon-green-dim)] bg-gray-900 group-hover:scale-105 transition-transform duration-500">
+                                            <img
+                                                src="/profile.jpg"
+                                                alt="Vignesh Sakthivel"
+                                                className="w-full h-full object-cover transition-all duration-500"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                        </div>
+                                    </div>
                                     <h3 className="text-2xl font-bold mb-6 text-white border-b border-gray-800 pb-2">THE ARCHITECT</h3>
                                     <p className="text-gray-300 mb-8 leading-relaxed font-light">
-                                        I didn't just stumble into code; I ran towards it. What started as curiosity about game logic turned into an obsession with distributed systems and human-centric architecture.
+                                        I am a second-year Information Technology student at Kongu Engineering College with a relentless drive to build and innovate. My journey in tech isn't just about learning syntax; it's about solving real-world puzzles using Java, Data Structures, and Object-Oriented principles.
                                         <br /><br />
-                                        Today, I focus on building software that's resilient, fast, and beautiful. If it's not pushing limits, it's not done.
+                                        I specialize in crafting robust systems, from console-based management tools to multi-threaded client-server applications. If there's a problem, I'm already architecting the solution.
                                     </p>
 
                                     <div className="grid grid-cols-1 gap-4 mb-8">
@@ -65,14 +75,16 @@ const About = () => {
                                         ))}
                                     </div>
 
-                                    <motion.button
+                                    <motion.a
+                                        href="/Resume.pdf"
+                                        target="_blank"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         className="w-full flex items-center justify-center gap-2 py-3 border border-[var(--neon-green)] text-[var(--neon-green)] rounded hover:bg-[var(--neon-green)] hover:text-black transition-all font-bold text-sm tracking-widest uppercase"
                                     >
                                         <Download size={16} />
                                         Access Full Dossier (CV)
-                                    </motion.button>
+                                    </motion.a>
                                 </div>
                             </div>
                         </Card3D>
@@ -92,9 +104,9 @@ const About = () => {
 
                         <div className="border-l-2 border-gray-900 ml-4 relative space-y-12">
                             {[
-                                { year: '2026', title: 'FUTURE HORIZON', desc: 'Focusing on AI-driven architectures and deeply embedded web performance optimizers.' },
-                                { year: '2025', title: 'INDUSTRIAL EXPERTISE', desc: 'Mastering the art of high-scale enterprise apps and micro-frontend ecosystems.' },
-                                { year: '2024', title: 'SYSTEM GENESIS', desc: 'Launched several production-grade tools focusing on user workflow efficiency.' }
+                                { year: '2026', title: 'THE ONE GOAL', desc: '"One ring to rule them all... No, one goal to achieve them all." Mastering the convergence of AI-driven systems and high-performance engineering.' },
+                                { year: '2025', title: 'THE MILEAGE', desc: '"It\'s not the years, honey, it\'s the mileage." Pushing through industrial-grade challenges and architecting secure client-server ecosystems.' },
+                                { year: '2024', title: 'FORTUNE AND GLORY', desc: '"Fortune and glory, kid. Fortune and glory." Embarking on the quest of core Java fundamentals and system genesis.' }
                             ].map((item, index) => (
                                 <div key={index} className="relative pl-10 group">
                                     <div className="absolute -left-[11px] top-1 h-5 w-5 rounded-full bg-black border-2 border-gray-800 group-hover:border-[var(--neon-green)] group-hover:shadow-[0_0_10px_var(--neon-green)] transition-all duration-500"></div>

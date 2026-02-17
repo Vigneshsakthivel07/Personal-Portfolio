@@ -40,7 +40,7 @@ const Footer = () => {
                             <a href="https://twitter.com/vigneshsakthivel07" target="_blank" rel="noopener noreferrer" className="p-2 bg-[rgba(255,255,255,0.05)] rounded-full hover:bg-[var(--neon-green)] hover:text-black transition-all" aria-label="Twitter">
                                 <Twitter size={18} />
                             </a>
-                            <a href="mailto:vigneshsakthivel004@gmail.com" className="p-2 bg-[rgba(255,255,255,0.05)] rounded-full hover:bg-[var(--neon-green)] hover:text-black transition-all" aria-label="Email">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vigneshsakthivel004@gmail.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-[rgba(255,255,255,0.05)] rounded-full hover:bg-[var(--neon-green)] hover:text-black transition-all" aria-label="Email">
                                 <Mail size={18} />
                             </a>
                         </div>

@@ -38,15 +38,15 @@ const Contact = () => {
 
                     <div className="space-y-6">
                         {[
-                            { icon: <Mail size={24} />, text: 'vigneshsakthivel004@gmail.com', href: 'mailto:vigneshsakthivel004@gmail.com' },
-                            { icon: <Github size={24} />, text: 'github.com/Vigneshsakthivel07', href: 'https://github.com/Vigneshsakthivel07' },
-                            { icon: <Linkedin size={24} />, text: 'linkedin.com/in/vigneshsakthivel07', href: 'https://www.linkedin.com/in/vigneshsakthivel07/' }
+                            { icon: <Mail size={24} />, text: 'vigneshsakthivel004@gmail.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=vigneshsakthivel004@gmail.com', external: true },
+                            { icon: <Github size={24} />, text: 'github.com/Vigneshsakthivel07', href: 'https://github.com/Vigneshsakthivel07', external: true },
+                            { icon: <Linkedin size={24} />, text: 'linkedin.com/in/vigneshsakthivel07', href: 'https://www.linkedin.com/in/vigneshsakthivel07/', external: true }
                         ].map((item, idx) => (
                             <motion.a
                                 key={idx}
                                 href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                target={item.external ? "_blank" : "_self"}
+                                rel={item.external ? "noopener noreferrer" : ""}
                                 className="flex items-center gap-4 group p-2 rounded-lg hover:bg-[rgba(57,255,20,0.05)] transition-all"
                                 whileHover={{ x: 10 }}
                             >
@@ -128,8 +128,8 @@ const Contact = () => {
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     className={`w-full group font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-3 ${status === 'submitting'
-                                            ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                                            : 'bg-[var(--neon-green)] text-black hover:shadow-[0_0_30px_var(--neon-green)]'
+                                        ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
+                                        : 'bg-[var(--neon-green)] text-black hover:shadow-[0_0_30px_var(--neon-green)]'
                                         }`}
                                 >
                                     {status === 'submitting' ? (

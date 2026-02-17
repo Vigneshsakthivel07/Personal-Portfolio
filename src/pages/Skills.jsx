@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 const skillsData = [
     {
         category: "Languages",
-        items: ["Java", "JavaScript (ES6+)", "HTML5", "CSS3", "SQL"]
+        items: ["Java", "JavaScript (ES6+)", "HTML5", "CSS3", "Basics of C", "Kotlin"]
     },
     {
         category: "Frameworks & Libraries",
-        items: ["React.js", "Tailwind CSS", "Framer Motion", "Node.js (Basic)", "Java Swing"]
+        items: ["React.js", "Basics JWT", "Node.js (Basic)", "Java Swing"]
     },
     {
         category: "Tools & Platforms",
-        items: ["Git & GitHub", "VS Code", "IntelliJ IDEA", "Figma", "Vite"]
+        items: ["Git & GitHub", "VS Code", "IntelliJ IDEA", "Cursor", "Antigravity", "GitHub Copilot"]
     },
     {
         category: "Core Concepts",
-        items: ["Data Structures", "Algorithms", "OOP", "DBMS", "RESTful APIs"]
+        items: ["Data Structures", "Algorithms", "OOP", "DBMS"]
     }
 ];
 

@@ -3,6 +3,12 @@ import Card3D from '../components/UI/Card3D';
 
 const projects = [
     {
+        title: 'Banking Application (Client-Server)',
+        desc: 'A secure client-server banking system implementing socket programming and multi-threading for real-time transaction processing.',
+        tech: ['Java', 'Socket Programming', 'Multi-threading', 'Swing'],
+        link: 'https://github.com/Vigneshsakthivel07/Banking-Application-Client-Server-'
+    },
+    {
         title: 'HR Management System',
         desc: 'Java-based HR management system to manage employee records with add, update, delete functionality.',
         tech: ['Java', 'OOP', 'Data Structures'],
