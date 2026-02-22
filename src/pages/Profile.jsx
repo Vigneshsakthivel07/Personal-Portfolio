@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, Code, Terminal, FileText, Download } from 'lucide-react';
+import { Award, Code, Terminal, Download } from 'lucide-react';
 import Card3D from '../components/UI/Card3D';
 
 const About = () => {
@@ -27,7 +27,7 @@ const About = () => {
                 </motion.div>
 
                 {/* Content Grid */}
-                <div className="grid md:grid-cols-2 gap-12 items-start">
+                <div className="grid md:grid-cols-2 gap-12 items-start mb-20">
 
                     {/* Left Column: 3D Profile Card */}
                     <motion.div
@@ -50,11 +50,12 @@ const About = () => {
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                         </div>
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-6 text-white border-b border-gray-800 pb-2">THE ARCHITECT</h3>
+                                    <h3 className="text-2xl font-bold mb-6 text-white border-b border-gray-800 pb-2 uppercase tracking-widest flex justify-between items-center">
+                                        <span>THE ARCHITECT</span>
+                                        <span className="text-xs text-[var(--neon-green)] font-mono border border-[var(--neon-green)] px-2 py-1 rounded">VIBE CODER</span>
+                                    </h3>
                                     <p className="text-gray-300 mb-8 leading-relaxed font-light">
                                         I am a second-year Information Technology student at Kongu Engineering College with a relentless drive to build and innovate. My journey in tech isn't just about learning syntax; it's about solving real-world puzzles using Java, Data Structures, and Object-Oriented principles.
-                                        <br /><br />
-                                        I specialize in crafting robust systems, from console-based management tools to multi-threaded client-server applications. If there's a problem, I'm already architecting the solution.
                                     </p>
 
                                     <div className="grid grid-cols-1 gap-4 mb-8">
@@ -68,7 +69,7 @@ const About = () => {
                                                     {item.icon}
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold text-white text-sm">{item.title}</div>
+                                                    <div className="font-bold text-white text-sm uppercase tracking-wider">{item.title}</div>
                                                     <div className="text-xs text-gray-500">{item.sub}</div>
                                                 </div>
                                             </div>
@@ -78,8 +79,8 @@ const About = () => {
                                     <motion.a
                                         href="/Resume.pdf"
                                         target="_blank"
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
                                         className="w-full flex items-center justify-center gap-2 py-3 border border-[var(--neon-green)] text-[var(--neon-green)] rounded hover:bg-[var(--neon-green)] hover:text-black transition-all font-bold text-sm tracking-widest uppercase"
                                     >
                                         <Download size={16} />
@@ -95,23 +96,23 @@ const About = () => {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.4, duration: 0.8 }}
-                        className="space-y-8"
+                        className="space-y-8 mt-12 md:mt-0"
                     >
-                        <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                        <h3 className="text-2xl font-bold text-white flex items-center gap-3 tracking-widest uppercase text-shadow-neon pl-2">
                             <span className="w-8 h-[2px] bg-[var(--neon-green)]"></span>
-                            CHRONOLOGY
+                            MY QUOTES
                         </h3>
 
                         <div className="border-l-2 border-gray-900 ml-4 relative space-y-12">
                             {[
-                                { year: '2026', title: 'THE ONE GOAL', desc: '"One ring to rule them all... No, one goal to achieve them all." Mastering the convergence of AI-driven systems and high-performance engineering.' },
-                                { year: '2025', title: 'THE MILEAGE', desc: '"It\'s not the years, honey, it\'s the mileage." Pushing through industrial-grade challenges and architecting secure client-server ecosystems.' },
-                                { year: '2024', title: 'FORTUNE AND GLORY', desc: '"Fortune and glory, kid. Fortune and glory." Embarking on the quest of core Java fundamentals and system genesis.' }
+                                { year: 'VISION', title: 'THE ONE GOAL', desc: '"One ring to rule them all... No, one goal to achieve them all." Mastering the convergence of AI-driven systems and high-performance engineering.' },
+                                { year: 'DRIVE', title: 'THE MILEAGE', desc: '"It\'s not the years, honey, it\'s the mileage." Pushing through industrial-grade challenges and architecting secure client-server ecosystems.' },
+                                { year: 'GENESIS', title: 'FORTUNE AND GLORY', desc: '"Fortune and glory, kid. Fortune and glory." Embarking on the quest of core Java fundamentals and system design.' }
                             ].map((item, index) => (
                                 <div key={index} className="relative pl-10 group">
-                                    <div className="absolute -left-[11px] top-1 h-5 w-5 rounded-full bg-black border-2 border-gray-800 group-hover:border-[var(--neon-green)] group-hover:shadow-[0_0_10px_var(--neon-green)] transition-all duration-500"></div>
+                                    <div className="absolute -left-[11px] top-1 h-5 w-5 rounded-full bg-black border-2 border-gray-800 group-hover:border-[var(--neon-green)] group-hover:shadow-[0_0_15px_var(--neon-green)] transition-all duration-500"></div>
                                     <div className="text-[var(--neon-green)] font-mono text-xs font-bold mb-2 tracking-widest">{item.year}</div>
-                                    <h4 className="text-lg font-bold text-white mb-2 group-hover:text-[var(--neon-green)] transition-colors">{item.title}</h4>
+                                    <h4 className="text-lg font-bold text-white mb-2 group-hover:text-[var(--neon-green)] transition-all uppercase tracking-wider">{item.title}</h4>
                                     <p className="text-gray-500 text-sm leading-relaxed font-light group-hover:text-gray-300 transition-colors">
                                         {item.desc}
                                     </p>

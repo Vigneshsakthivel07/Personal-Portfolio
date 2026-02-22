@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, User, Briefcase, Mail, Zap, Code, Menu, X } from 'lucide-react';
+import { Home, User, Briefcase, Mail, Zap, Code, Menu, X, GraduationCap, Award } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../../styles/index.css';
 
@@ -14,10 +14,11 @@ const Navbar = () => {
     }, [location]);
 
     const navItems = [
-        { name: 'Home', path: '/', icon: <Home size={20} /> },
+        { name: 'Profile', path: '/', icon: <User size={20} /> },
         { name: 'Projects', path: '/projects', icon: <Briefcase size={20} /> },
         { name: 'Skills', path: '/skills', icon: <Code size={20} /> },
-        { name: 'About', path: '/about', icon: <User size={20} /> },
+        { name: 'Education', path: '/education', icon: <GraduationCap size={20} /> },
+        { name: 'Certifications', path: '/certifications', icon: <Award size={20} /> },
         { name: 'Contact', path: '/contact', icon: <Mail size={20} /> },
     ];
 
@@ -74,12 +75,14 @@ const Navbar = () => {
                                     key={item.name}
                                     to={item.path}
                                     className={({ isActive }) => `
-                      flex items-center gap-4 p-3 rounded-xl transition-all
-                      ${isActive ? 'bg-[rgba(57,255,20,0.1)] text-[var(--neon-green)]' : 'text-gray-300 hover:bg-[rgba(255,255,255,0.05)]'}
+                      flex items-center gap-4 p-4 rounded-xl transition-all duration-300
+                      ${isActive ? 'bg-[rgba(57,255,20,0.1)] text-[var(--neon-green)] shadow-[inset_0_0_10px_rgba(57,255,20,0.1)]' : 'text-gray-300 hover:bg-[rgba(255,255,255,0.05)] hover:text-white'}
                     `}
                                 >
-                                    {item.icon}
-                                    <span className="font-medium">{item.name}</span>
+                                    <div className="text-inherit">
+                                        {item.icon}
+                                    </div>
+                                    <span className="font-bold tracking-widest uppercase text-sm">{item.name}</span>
                                 </NavLink>
                             ))}
                         </div>

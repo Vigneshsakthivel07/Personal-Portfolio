@@ -1,22 +1,41 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Github, Linkedin, Send, CheckCircle } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, CheckCircle, Code, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-    const [status, setStatus] = useState('idle'); // idle | submitting | success
+    const [status, setStatus] = useState('idle'); // idle | submitting | success | error
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('submitting');
 
-        // Simulate network latency for industry feel
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const templateParams = {
+                from_name: formState.name,
+                from_email: formState.email,
+                reply_to: formState.email,
+                name: formState.name,
+                email: formState.email,
+                message: formState.message,
+                to_name: 'Vignesh',
+            };
 
-        setStatus('success');
-        setFormState({ name: '', email: '', message: '' });
+            await emailjs.send(
+                'service_r0w9ddk',
+                'template_mnvnnlp',
+                templateParams,
+                'rAKgVGi21l3zCMWY5'
+            );
 
-        // Reset after 5 seconds
+            setStatus('success');
+            setFormState({ name: '', email: '', message: '' });
+        } catch (error) {
+            console.error('TRANSMISSION ERROR:', error);
+            setStatus('error');
+        }
+
         setTimeout(() => setStatus('idle'), 5000);
     };
 
@@ -40,7 +59,8 @@ const Contact = () => {
                         {[
                             { icon: <Mail size={24} />, text: 'vigneshsakthivel004@gmail.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=vigneshsakthivel004@gmail.com', external: true },
                             { icon: <Github size={24} />, text: 'github.com/Vigneshsakthivel07', href: 'https://github.com/Vigneshsakthivel07', external: true },
-                            { icon: <Linkedin size={24} />, text: 'linkedin.com/in/vigneshsakthivel07', href: 'https://www.linkedin.com/in/vigneshsakthivel07/', external: true }
+                            { icon: <Linkedin size={24} />, text: 'linkedin.com/in/vigneshsakthivel07', href: 'https://www.linkedin.com/in/vigneshsakthivel07/', external: true },
+                            { icon: <Code size={24} />, text: 'leetcode.com/u/MpSE3kdZ7c/', href: 'https://leetcode.com/u/MpSE3kdZ7c/', external: true }
                         ].map((item, idx) => (
                             <motion.a
                                 key={idx}
@@ -78,6 +98,24 @@ const Contact = () => {
                                 <CheckCircle size={64} className="text-[var(--neon-green)] mb-4" />
                                 <h3 className="text-2xl font-bold text-white mb-2">SIGNAL RECEIVED</h3>
                                 <p className="text-gray-400">Your message has been successfully transmitted. I'll get back to you soon.</p>
+                            </motion.div>
+                        ) : status === 'error' ? (
+                            <motion.div
+                                key="error"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                className="flex flex-col items-center justify-center py-12 text-center"
+                            >
+                                <AlertCircle size={64} className="text-red-500 mb-4" />
+                                <h3 className="text-2xl font-bold text-white mb-2">UPLINK FAILED</h3>
+                                <p className="text-gray-400">There was an issue transmitting your message. Please try again or reach out directly.</p>
+                                <button
+                                    onClick={() => setStatus('idle')}
+                                    className="mt-6 text-[var(--neon-green)] underline underline-offset-4 font-mono text-sm uppercase"
+                                >
+                                    RETRY CONNECTION
+                                </button>
                             </motion.div>
                         ) : (
                             <motion.form

@@ -8,9 +8,10 @@ import ScrollToTop from './components/UI/ScrollToTop';
 import { AnimatePresence } from 'framer-motion';
 
 // Lazy load pages for performance
-const Home = lazy(() => import('./pages/Home'));
 const Projects = lazy(() => import('./pages/Projects'));
-const About = lazy(() => import('./pages/About'));
+const Profile = lazy(() => import('./pages/Profile'));
+const Education = lazy(() => import('./pages/Education'));
+const Certifications = lazy(() => import('./pages/Certifications'));
 const Skills = lazy(() => import('./pages/Skills'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -23,10 +24,11 @@ const AnimatedRoutes = () => {
     <AnimatePresence mode="wait">
       <Suspense fallback={<LoadingScreen />}>
         <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Profile />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/certifications" element={<Certifications />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
