@@ -152,13 +152,14 @@ function AboutScene() {
 
 function SceneManager({ route }) {
     switch (route) {
-        case '/': return <AboutScene />;
+        case '/': return <HomeScene />;
+        case '/about': return <AboutScene />;
         case '/projects': return <ProjectsScene />;
         case '/skills': return <SkillsScene />;
         case '/education': return <AboutScene />;
         case '/certifications': return <ProjectsScene />;
         case '/contact': return <ContactScene />;
-        default: return <AboutScene />;
+        default: return <HomeScene />;
     }
 }
 

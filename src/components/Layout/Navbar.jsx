@@ -14,7 +14,8 @@ const Navbar = () => {
     }, [location]);
 
     const navItems = [
-        { name: 'Profile', path: '/', icon: <User size={20} /> },
+        { name: 'Home', path: '/', icon: <Home size={20} /> },
+        { name: 'About', path: '/about', icon: <User size={20} /> },
         { name: 'Projects', path: '/projects', icon: <Briefcase size={20} /> },
         { name: 'Skills', path: '/skills', icon: <Code size={20} /> },
         { name: 'Education', path: '/education', icon: <GraduationCap size={20} /> },

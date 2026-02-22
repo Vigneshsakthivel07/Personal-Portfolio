@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import '../../styles/index.css';
 
 const Footer = () => {
@@ -21,10 +22,10 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold text-white mb-4">Quick Links</h4>
                         <ul className="space-y-2 text-sm text-gray-400">
-                            <li><a href="/" className="hover:text-[var(--neon-green)] transition-colors">Home</a></li>
-                            <li><a href="/projects" className="hover:text-[var(--neon-green)] transition-colors">Projects</a></li>
-                            <li><a href="/about" className="hover:text-[var(--neon-green)] transition-colors">About</a></li>
-                            <li><a href="/contact" className="hover:text-[var(--neon-green)] transition-colors">Contact</a></li>
+                            <li><Link to="/" className="hover:text-[var(--neon-green)] transition-colors">Home</Link></li>
+                            <li><Link to="/projects" className="hover:text-[var(--neon-green)] transition-colors">Projects</Link></li>
+                            <li><Link to="/about" className="hover:text-[var(--neon-green)] transition-colors">About</Link></li>
+                            <li><Link to="/contact" className="hover:text-[var(--neon-green)] transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
